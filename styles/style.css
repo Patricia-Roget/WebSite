@@ -1,0 +1,364 @@
+/* Réinitialisation et styles de base */
+/* Style pour la bannière */
+.banniere::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.banniere {
+    position: relative;
+    width: 100%;
+    height: auto; /* La hauteur s'adapte à l'image */
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Centre l'image horizontalement */
+}
+
+.banniere img {
+    width: 100%; /* L'image prend toute la largeur */
+    height: auto; /* La hauteur s'ajuste proportionnellement */
+    object-fit: cover; /* Affiche l'image entière sans rognage */
+    max-height: 300px; /* Limite la hauteur maximale (ajuste cette valeur selon tes besoins) */
+}
+
+
+/* Style de base pour le texte de la bannière */
+.banniere-texte {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 15px;
+    border-radius: 5px;
+    width: 90%; /* Largeur adaptée pour mobile */
+    max-width: 500px; /* Largeur maximale pour éviter l'étirement */
+    text-align: center;
+    margin: 0 auto; /* Centre le bloc */
+}
+
+/* Taille de police par défaut (desktop) */
+.banniere-texte h1 {
+    font-size: 2.5em;
+    margin: 0 0 5px 0;
+}
+
+.banniere-texte p {
+    font-size: 1.2em;
+    margin: 0 0 5px 0;
+}
+
+/* Ajustements pour mobile */
+@media screen and (max-width: 768px) {
+    .banniere-texte {
+        width: 95%; /* Prend presque toute la largeur */
+        padding: 8px 10px; /* Padding réduit */
+    }
+
+    .banniere-texte h1 {
+        font-size: 1.6em; /* Taille réduite pour mobile */
+    }
+
+    .banniere-texte p {
+        font-size: 0.9em; /* Taille réduite pour mobile */
+        line-height: 1.2; /* Espacement entre les lignes */
+    }
+}
+/* Style général des sections */
+.projet {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.projet h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+/* Style des catégories de projets */
+.projet-categorie {
+    margin-top: 15px;
+}
+
+.projet-categorie h3 {
+    color: #3498db;
+    font-size: 1.3em;
+    margin-top: 20px;
+}
+
+.horizon {
+    font-style: italic;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* Style des listes */
+.projet-categorie ul {
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.projet-categorie li {
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+/* Style des items de projet */
+.projet-item {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #bdc3c7;
+}
+
+.projet-item:last-child {
+    border-bottom: none;
+}
+
+/* Style des players audio */
+.audio-player {
+    width: 100%;
+    margin: 10px 0;
+}
+
+/* Style des liens PDF */
+.pdf-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pdf-link:hover {
+    text-decoration: underline;
+}
+
+/* Adaptation pour mobile */
+@media screen and (max-width: 768px) {
+    .projet {
+        padding: 10px;
+    }
+
+    .projet h2 {
+        font-size: 1.5em;
+    }
+
+    .projet-categorie h3 {
+        font-size: 1.1em;
+    }
+}
+
+/* Style général de la section contact */
+.contact {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.contact p {
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+/* Style de la liste de contacts */
+.contact-liste {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Style des icônes */
+.contact-icone {
+    font-size: 1.8em;
+    color: #3498db;
+    width: 50px;
+    text-align: center;
+}
+
+.contact-icone i {
+    vertical-align: middle;
+}
+
+/* Style des infos de contact */
+.contact-info {
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.contact-info span {
+    display: block;
+    font-size: 0.9em;
+    color: #7f8c8d;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-info a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+.contact-info a:hover {
+    color: #3498db;
+    text-decoration: underline;
+}
+
+/* Adaptation pour mobile */
+@media screen and (max-width: 600px) {
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact-info {
+        text-align: center;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+}
+
+.onglets {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.onglets button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.onglets button:hover {
+    background-color: #bdc3c7;
+}
+
+.onglets button.onglet-actif {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Masquer les sections non actives */
+.projet:not(.actif) {
+    display: none;
+}
+
+/* Animation au survol des cartes */
+.carte-projet {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.carte-projet:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Animation des onglets */
+.onglets button {
+    transition: transform 0.2s;
+}
+
+.onglets button:active {
+    transform: scale(0.95);
+}
+
+/* Animation d'apparition des sections */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.projet.actif {
+    animation: fadeIn 0.5s ease-out;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+audio {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+}

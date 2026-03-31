@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Projets - Philippe Roget</title>
+	 <!-- Balises meta pour le SEO -->
+    <meta name="description" content="Découvrez les maquettes orchestrales et partitions de Philippe Roget, compositeur inspiré par l'harmonie classique et les traités de Dubois.">
+    <meta name="keywords" content="composition musicale, orchestration, harmonie classique, partitions, maquettes orchestrales, musique, Philippe Roget">
+    <meta name="author" content="Philippe Roget">
+    <!-- Balise pour les réseaux sociaux (Open Graph) -->
+    <meta property="og:title" content="Philippe Roget - Compositeur et Orchestrateur">
+    <meta property="og:description" content="Explorez mes maquettes orchestrales et partitions inspirées de l'harmonie classique.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://philippe-roget.github.io/WebSite/">
+    <meta property="og:image" content="https://philippe-roget.github.io/WebSite/assets/images/aperçu-site.jpg"> <!-- À créer : une capture d'écran de ton site -->
+    <link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>Mes Projets</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="projets.html">Mes projets</a></li>
+            <li><a href="contact.html">Me contacter</a></li>
+        </ul>
+    </nav>
+		<div class="onglets">
+		<button class="onglet-actif" data-cible="formation">Formation</button>
+		<button data-cible="production">Production</button>
+		<button data-cible="composition">Composition</button>
+	</div>	
+    <main>
+        <!-- Section Formation -->
+        <section class="projet actif" id="formation">
+		<h2><i class="fas fa-graduation-cap"></i> Formation</h2>
+            <div class="projet-categorie">
+                <h3>Horizon 2032 - L'harmonie tonale</h3>
+                <ul>
+                    <li><strong>2025-2028</strong> : </li>
+					<p>	Traité d'harmonie de Dubois & Koechlin <br>
+						Traité d'orchestration de Koechlin
+					</p>
+                    <li><strong>2028-2030</strong> : Traité de Contrepoint de Dubois & Fux </li>
+                    <li><strong>2030-2032</strong> : Traité sur la Fugue de Dubois </li>
+                </ul>
+
+                <h3>Horizon 2034 - L'harmonie atonale </h3>
+                <ul>
+                    <li><strong>2032-2034</strong> : Traité d'harmonie de Schönberg</li>
+                </ul>
+
+                <h3>Horizon 2040 - L'harmonie microtonale </h3>
+                <ul>
+                    <li><strong>2034-2036</strong> : Ivan Wyschnegradsky et la musique microtonale (thèse de Franck Jedrzejewski - <a href="https://hal.science/tel-02902282" target="_blank">HAL Id: tel-02902282</a>)</li>
+                    <li><strong>2036-2040</strong> : Écriture d'un Traité d'harmonie microtonale (mémoire de fin d'études)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Section Production -->
+        <section class="projet" id="production">
+            <h2><i class="fas fa-sliders-h"></i> Production</h2>
+            <div class="projet-categorie">
+                <div class="projet-item">
+                    <h3>2025-2026 : Maquette eorchestrale</h3>
+                    <p>L'ouverture de la <em>Symphonie en Ré mineur</em> de César Franck.</p>
+                    <audio controls class="audio-player">
+                        <source src="assets/maquettes/FRANCK-Symphonie en Ré mineur.mp3" type="audio/mpeg">
+                        Ton navigateur ne supporte pas l'élément audio.
+                    </audio>
+                    <p>
+                        <a href="assets/partitions/Orchestre_Conducteur.pdf" target="_blank" class="pdf-link">📄 Partition (PDF)</a>
+                    </p>
+                </div>
+
+                <div class="projet-item">
+                    <h3>2026-2027 : Morceaux choisis de Jean V.</h3>
+                    <p>Mon parrain musicien.</p>
+                </div>
+
+                <div class="projet-item">
+                    <h3>2026-2030 : Les 4 Symphonies de Reber</h3>
+                    <p>Reber : le nom de jeune fille de ma mère, Henri un illustre aïeul ?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Composition -->
+        <section class="projet" id="composition">
+            <h2><i class="fas fa-music"></i> Composition</h2>
+            <div class="projet-categorie">
+                <div class="projet-item">
+                    <h3>Horizon 2030 : Les 52 Chorals</h3>
+                    <p>Vous aimez Bach, moi aussi...</p>
+                </div>
+
+                <div class="projet-item">
+                    <h3>Horizon 2040 : Les Parques</h3>
+                    <p>Un opéra en 4 actes.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Philippe Roget</p>
+    </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const boutons = document.querySelectorAll('.onglets button');
+        boutons.forEach(bouton => {
+            bouton.addEventListener('click', function() {
+                // Masquer toutes les sections
+                document.querySelectorAll('.projet').forEach(section => {
+                    section.classList.remove('actif');
+                });
+                // Afficher la section cible
+                const cible = this.getAttribute('data-cible');
+                document.getElementById(cible).classList.add('actif');
+                // Mettre à jour les onglets actifs
+                boutons.forEach(b => b.classList.remove('onglet-actif'));
+                this.classList.add('onglet-actif');
+            });
+        });
+    });
+</script>
+</body>
+
+</html>
