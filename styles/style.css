@@ -44,7 +44,7 @@
 
     padding: 10px 15px;
     border-radius: 5px;
-    width: 90%; /* Largeur adaptée pour mobile */
+    width: 70%; /* Largeur adaptée pour mobile */
     max-width: 500px; /* Largeur maximale pour éviter l'étirement */
     text-align: center;
     margin: 0 auto; /* Centre le bloc */
